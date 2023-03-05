@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5</title>
+</head>
+<body>
+    Задача 5. Створити окремі функції, які переводять:
+    Сантиметри у дюйми;
+    Кілограми у фунти;
+    Кілометри у милі.
+    <br>
+    <script>
+//////////Сантиметри у дюйми;
+    const cm = parseFloat(prompt(`Cm=`))
+    const cmFraction = 0.393700787
+    function convertСmToIns(cm) {
+        return cm * cmFraction
+    }
+    const inchResult = convertСmToIns(cm)
+    document.write(`${cm} сантиметрів дорівює ${inchResult} дюймам <br>`)
+      
+//////////Кілограми у фунти;
+
+const kg = parseFloat(prompt(`kg=`))
+    const kgFraction = 2.2046
+    function convertKgToPound(kg) {
+        return kg * kgFraction
+    }
+    const poundResult = convertKgToPound(kg)
+    document.write(`${kg} кілограм дорівює ${poundResult} фунтам <br>`)
+
+//////////Кілометри у милі;
+
+const km= parseFloat(prompt(`km=`))
+    const kmFraction = 0.621371192
+    function convertKmToMiles(km) {
+        return km * kmFraction
+    }
+    const milesResult = convertKmToMiles(km)
+    document.write(`${km} кілометрів дорівює ${milesResult} милям <br>`)
+    </script>
+</body>
+</html>

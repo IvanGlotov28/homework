@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3</title>
+</head>
+<body>
+    <script>
+        // Випадковим чином генерується число від 1 до 5. Спробуйте вгадати число за 2 спроби.
+        let min = 1, max = 5
+        let randomNumber = min + Math.floor(Math.random() * (max - min + 1))
+        console.log(randomNumber)
+        let attemptOne = parseInt(prompt(`Перша спроба`))
+        let attemptTwo = parseInt(prompt(`Друга спроба`))
+        if(randomNumber === attemptOne || randomNumber === attemptTwo) document.write('Ви вгадали')
+        else document.write(`Ви не вгадали`)
+    </script>
+</body>
+</html>

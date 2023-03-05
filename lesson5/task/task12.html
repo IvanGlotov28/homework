@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 12</title>
+</head>
+<body>
+    Задача 12. Ігровий автомат. Випадково вибираємо зображення у 3 позиціях. Вибір у кожній позиції вибирається як одне з чотирьох зображень. Вивести ці зображення і повідомити виграш користувача (три перших зображення 100 грн, три других – 200, три третіх – 500, три четвертих зображення – 1000грн). Використати цикли і switch (для вибору зображення за номером).
+    <br>
+    <script>
+            let counterLemon =0
+            let counterApple =0
+            let counterStrawberry =0
+            let counterOrange =0
+            
+            for(let i =0; i<3; i++){
+            let randomImage = Math.floor(Math.random() * (5 - 1 ))+1
+            switch (randomImage) {
+                case 1: {document.write(`<img src="../img/task12limon.png" alt="">`)
+                        counterLemon++}
+                    break;
+                case 2: {document.write(`<img src="../img/task12apple.png" alt="">`)
+                         counterApple++}
+                    break
+                case 3: {document.write(`<img src="../img/task12strawberry.png" alt="">`)
+                        counterStrawberry++}
+                    break
+                case 4: {document.write(`<img src="../img/task12orange.png" alt="">`)
+                        counterOrange++}
+                    break
+                default:
+                    break;
+            }
+        }
+        switch (3) {
+            case counterLemon : document.write(`<br> Ваш виграш 100 грн`)
+                break;
+            case counterApple : document.write(`<br> Ваш виграш 200 грн`)
+                break;
+            case counterStrawberry : document.write(`<br> Ваш виграш 500 грн`)
+                break;
+            case counterOrange : document.write(`<br> Ваш виграш 1000 грн`)
+                break;
+
+            default: document.write(`<br> Ви не виграли нічого`)
+                break;
+        }
+       
+
+    </script>
+</body>
+</html>

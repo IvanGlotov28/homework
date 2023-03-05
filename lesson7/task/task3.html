@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3</title>
+</head>
+<body>
+    Задача 3. Створити окремі функції, які для 4 чисел знаходять:
+    1. Cуму;
+    2. Добуток;
+    3. Середнє арифметичне;
+    4. Мінімальне значення. 
+    <br>
+    <script>
+        const c1 = parseFloat(prompt(`c1 =`))
+        const c2 = parseFloat(prompt(`c2 =`))
+        const c3 = parseFloat(prompt(`c3 =`))
+        const c4 = parseFloat(prompt(`c4 =`))
+        ////////////Сума////////////////
+        function getSum(c1, c2, c3, c4) {
+            return c1 + c2 + c3 + c4 
+        }
+        const sum = getSum(c1, c2, c3, c4)
+        document.write(`Сума = ${sum} <br>`)
+        ///////////Добуток////////////////
+        function getProduct(c1, c2, c3, c4) {
+            return c1 * c2 * c3 * c4 
+        }
+        const product = getProduct(c1, c2, c3, c4)
+        document.write(`Добуток = ${product} <br>`)
+         ////////////Середнє арифметичне////////////////
+        function getAverage(c1, c2, c3, c4) {
+            return (c1 + c2 + c3 + c4) / 4 
+        }
+        const average = getAverage(c1, c2, c3, c4)
+        document.write(`Середнє арифметичне = ${average} <br>`)
+
+        ////////////Мінімальне////////////////
+        function getMin(c1, c2, c3, c4) {
+            min = c1
+            if (c2<min) min = c2
+            if(c3<min) min = c3
+            if(c4<min) min = c4
+            return min
+        }
+        const minValue = getMin(c1, c2, c3, c4)
+        document.write(`Мінімальне значення = ${minValue} <br>`)
+
+    </script>
+</body>
+</html>

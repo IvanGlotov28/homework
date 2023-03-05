@@ -1,0 +1,17 @@
+.task{
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    color: forestgreen;
+}
+
+h2{
+    font-size: 22;
+}

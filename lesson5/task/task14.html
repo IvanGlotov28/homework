@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 14</title>
+</head>
+<body>
+    Користувачу повідомляють суму, яку йому треба сплатити. Користувач поступово вводить суму грошей до тих пір, поки суми не буде достатньо для оплати товарів (кожного разу користувачу повідомляють, яку ще суму потрібно ввести).
+    <br>
+    <script>
+        let sum = Math.floor(Math.random() * (5000 - 1 ))+1
+        const totalSum = sum
+        let userSum = 0
+        let sumCounter =0
+    while(sumCounter<totalSum){
+        userSum = parseFloat(prompt(`Вам необхідно сплатити ще ${sum}гривень, введіть суму яку ви готові оплатити`))
+        sum-=userSum
+        sumCounter += userSum
+        }
+        document.write(`Дякую за оплату <br>`)
+        if(totalSum < sumCounter ) document.write(`Візьміть здачу ${sumCounter-totalSum} гривень`)
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 6</title>
+</head>
+<body>
+<script>
+        let ware1Price = parseFloat(prompt(`Введіть вартість першого товару`))
+let ware1Number = parseInt(prompt(`Введіть кількість першого товару`))
+let ware1TotalPrice = ware1Price * ware1Number
+
+let ware2Price = parseFloat(prompt(`Введіть вартість другого товару`))
+let ware2Number = parseInt(prompt(`Введіть кількість другого товару`))
+let ware2TotalPrice = ware2Price * ware2Number
+
+let ware3Price = parseFloat(prompt(`Введіть вартість третього товару`))
+let ware3Number = parseInt(prompt(`Введіть кількість третього товару`))
+let ware3TotalPrice = ware3Price * ware3Number
+let totalPrice = ware1TotalPrice + ware2TotalPrice + ware3TotalPrice
+
+document.write(
+    `<table border="1px">
+    <tr>
+    <td>Кількість першого товару: ${ware1Number}</td>
+    <td>Вартість першого товару: ${ware1Price}</td>
+    <td>Загальна вартість першого товару: ${ware1TotalPrice}</td>
+    </tr>
+
+    <tr>
+    <td>Кількість другого товару: ${ware2Number}</td>
+    <td>Вартість другого товару: ${ware2Price}</td>
+    <td>Загальна другого першого товару: ${ware2TotalPrice}</td>
+     </tr>
+ 
+     <tr>
+     <td>Кількість третього товару: ${ware3Number}</td>
+     <td>Вартість третього товару: ${ware3Price}</td>
+     <td>Загальна вартість третього товару: ${ware3TotalPrice}</td>
+     <td>Загальна вартість всього товару: ${totalPrice}</td>
+     </tr>
+ 
+     </table>`
+ )
+</script>
+</body>
+</html>

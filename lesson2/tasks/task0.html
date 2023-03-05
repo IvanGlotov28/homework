@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 0</title>
+</head>
+<body>
+    <script>
+        // S1=a+12+b
+         let a =parseInt( prompt(`Введіть значення a`))
+        let b =parseInt( prompt(`Введіть значення b`))
+        let sum1 = a + 12 + b
+        alert (`Сума 1: ${sum1.toFixed(2)}`)
+    
+        // S2= √(a+b) / 2*a 
+        let sumDivision = (a + b) / (2 * a)
+        let sum2 = Math.sqrt(sumDivision)
+        alert (`Сума 2: ${sum2.toFixed(2)}`)
+    
+        // S3= 3*(√(a+b)*c)
+        let c =parseInt( prompt(`Введіть значення c`))
+        let sumMultiplication = (a + b) * c 
+        let sumPov = Math.sqrt(sumMultiplication)
+        let sum3 = Math.pow(sumPov, 3)
+        alert (`Сума 3: ${sum3.toFixed(2)}`)
+    
+        // S4 = sin(a / -b)
+        let sumDivision1 = a/ --b
+        let sum4 = Math.sin(sumDivision1)
+        alert (`Сума 4: ${sum4.toFixed(2)}`)
+    </script>
+</body>
+</html>
