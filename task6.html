@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 6</title>
+</head>
+<body>
+    Задача 6. Дано послідовність цін товарів та назв (у окремих масивах). Вивести на екран ті, які може собі дозволити користувач (кількість грошей задається). <br>
+    <script>
+        let productsPrices = [100, 20, 31, 200, 50, 100, 20, 500, 250, 550]
+        let productsTitles = [`сир`, `сік`, `хліб`, `картопля`, `морква`, `молоко`, `цибуля`, `пиво`, `яловичиа`, `масло`]
+        const userMoney = parseInt(prompt('Введіть кількість ваших грошей'))
+        let productThanUserCanBuy = []
+
+        function getProductThanUserCanBuy(userMoney, productsPrices, productsTitles) {
+            for (let i=0; i<productsPrices.length; i++) {
+                 if(userMoney>=productsPrices[i])
+                 productThanUserCanBuy.push(productsTitles[i])
+                 else alert(`Недостатньо коштів`)
+            }
+            return productThanUserCanBuy
+        }
+
+        document.write(`Продукти які користувач може купити: ${getProductThanUserCanBuy(userMoney, productsPrices, productsTitles)}`)
+    </script>
+</body>
+</html>

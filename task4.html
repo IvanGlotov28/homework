@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 4</title>
+</head>
+<body>
+    Задача 4. Дано послідовність номерів автомобілів. Підрахувати кількість номерів, які : 
+<br>
+•	починаються на букву «А»;<br>
+•	перша і остання літери співпадають;<br>
+•	складаються з більше ніж 5 символів;<br>
+<br>
+    <script>
+        let sequenceCarNumbers = [`PA3212ВP`, `ХА5324ВТ`, `AР48243РA`, `1ВТ324О`, `AO74A`]
+
+
+//////////////////Починаються на букву «А»;
+        function isNumFirstLetterA(sequenceCarNumbers) {
+            let firstLetterACounter = 0
+            for(let i=0; i<sequenceCarNumbers.length; i++){    
+                if(sequenceCarNumbers[i][0] ===`A`) firstLetterACounter++
+        }
+        return firstLetterACounter
+    }    
+
+document.write(`Номерів, що починаються на літеру А: ${isNumFirstLetterA(sequenceCarNumbers)} <br>`)
+
+
+
+///////////////////////////////////Перша і остання літери співпадають;
+function isFirstAndLastLetterSame(sequenceCarNumbers) {
+    let firstAndLastLetterSameCounter=0
+    for (let i=0; i<sequenceCarNumbers.length; i++) {
+        let x=sequenceCarNumbers[i].length
+        if(sequenceCarNumbers[i][0] === sequenceCarNumbers[i][x-1])    
+        firstAndLastLetterSameCounter++
+    }
+    return firstAndLastLetterSameCounter
+   
+}
+
+document.write(`Номерів, де збігаються перша та остання літера: ${isFirstAndLastLetterSame(sequenceCarNumbers)}<br>`)
+////////////////////Cкладаються з більше ніж 5 символів;
+    
+        function isNumMoreThan5Symbols(sequenceCarNumbers) {
+            let numMoreThan5SymbolsCounter = 0 
+    for(let i=0; i<sequenceCarNumbers.length; i++){
+        if(sequenceCarNumbers[i].length > 5)
+            numMoreThan5SymbolsCounter++
+    }
+    return numMoreThan5SymbolsCounter
+}
+
+document.write(`Номерів, що складаються з більше ніж 5 символів: ${isNumMoreThan5Symbols(sequenceCarNumbers)}`)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 7</title>
+</head>
+<body>
+    Задача 7. Дано послідовність платіжок протягом року. Знайти сумарну кількість грошей за: <br>
+за весь рік;<br>
+у першій половині року;<br>
+у другій половині року;<br>
+за літо;<br>
+за ІІ квартал;<br>
+за парні місяці (з парними номерами);<br>
+за місяці, які є початковими у сезоні (весна, літо, осінь, зима).<br>
+<br>
+
+    <script>
+    let paymentsPerYear = [100, 120, 107, 89, 214, 111, 78, 202, 147, 172, 99, 201]  
+    
+////////////////За весь рік
+
+            function getSumPerYear(paymentsPerYear) {
+                let sumPerYear = 0
+                for (let i=0; i<paymentsPerYear.length; i++) {
+                    sumPerYear+= paymentsPerYear[i]
+                }
+                return sumPerYear
+            }
+            document.write(`Сума за весь рік: ${getSumPerYear(paymentsPerYear)}<br>`)
+
+////////////////У першій половині року
+
+function getSumPerFirstHalfYear(paymentsPerYear) {
+                let sumPerFirstHalfYear = 0
+                for (let i=0; i<6; i++) {
+                    sumPerFirstHalfYear+= paymentsPerYear[i]
+                }
+                return sumPerFirstHalfYear
+            }
+            document.write(`Сума за першу половину року: ${getSumPerFirstHalfYear(paymentsPerYear)}<br>`)
+
+
+////////////////У другій половині року
+
+function getSumPerSecondHalfYear(paymentsPerYear) {
+                let sumPerSecondHalfYear = 0
+                for (let i=5; i<paymentsPerYear.length; i++) {
+                    sumPerSecondHalfYear+= paymentsPerYear[i]
+                }
+                return sumPerSecondHalfYear
+            }
+            document.write(`Сума за другу половину року: ${getSumPerSecondHalfYear(paymentsPerYear)}<br>`)
+
+
+////////////////За літо
+
+function getSumPerSummer(paymentsPerYear) {
+                let sumPerSummer = 0
+                for (let i=5; i<8; i++) {
+                    sumPerSummer+= paymentsPerYear[i]
+                }
+                return sumPerSummer
+            }
+            document.write(`Сума за літо: ${getSumPerSummer(paymentsPerYear)}<br>`)
+
+///////////////За ІІ квартал
+
+function getSumPerSecondQuarter(paymentsPerYear) {
+                let sumPerSecondQuarter = 0
+                for (let i=3; i<6; i++) {
+                    sumPerSecondQuarter+= paymentsPerYear[i]
+                }
+                return sumPerSecondQuarter
+            }
+            document.write(`Сума за ІІ квартал: ${getSumPerSecondQuarter(paymentsPerYear)}<br>`)
+
+///////////////За парні місяці 
+
+function getSumPerEvenMonths(paymentsPerYear) {
+                let sumPerEvenMonths = 0
+                for (let i=0; i<paymentsPerYear.length; i++) {
+                    if(i%2===0){
+                    i++
+                    sumPerEvenMonths+= paymentsPerYear[i]
+                    }
+                }
+                return sumPerEvenMonths
+            }
+            document.write(`Сума за парні місяці : ${getSumPerEvenMonths(paymentsPerYear)}<br>`)
+
+///////////////За місяці, які є початковими у сезоні 
+
+function getSumPerMonthsInitialSeason(paymentsPerYear) {
+                let sumPerMonthsInitialSeason = 0
+                for (let i=0; i<paymentsPerYear.length; i++) {
+                    if(i===2||i===5||i===8||i===11)
+                    sumPerMonthsInitialSeason+= paymentsPerYear[i]
+        
+                }
+                return sumPerMonthsInitialSeason
+            }
+            document.write(`Сума за місяці, які є початковими у сезоні: ${getSumPerMonthsInitialSeason(paymentsPerYear)}<br>`)
+
+
+           
+     
+    </script>   
+</body>
+</html>
