@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 8</title>
+</head>
+<body>
+    Задача 8. Дано одновимірний масив, у якому зберігається певна виграшна сума (елементи заповнюються випадковим чином значеннями від -500 до 500). Надаючи користувачу можливість вибирати номери елементів  (поки він не відмовиться). Знаходити сумарний виграш.
+    <br>
+    <script>
+        let gameArray = []
+        
+        function generatePrize(gameArray) {  
+        const min = -500;
+        const max = 500;
+        for(let i=0; i<101; i++){
+        const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+        gameArray.push(randomNum)
+        }
+        console.log(gameArray)
+    }
+    generatePrize(gameArray)
+
+    
+    function userChoice(gameArray) {
+    let userPrize = 0
+    let userChoice
+    let userSum = 0
+    do{
+         userChoice = confirm(`Граємо далі? Ваш виграш: ${userSum}`)
+        const userNum = parseInt(prompt(`Ваше число? (від 0 до 100)`))
+        userPrize= gameArray[userNum]
+        userSum+=userPrize
+    }
+    while(userChoice===true)
+    return userSum
+}
+
+document.write(`Ваш загальний виграш: ${userChoice(gameArray)}`)
+    
+    </script>
+</body>
+</html>

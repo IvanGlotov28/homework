@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 9</title>
+</head>
+<body>
+    Задача 9. Морський бій. Користувач вводить кількість клітинок одновимірного масиву та кількість одиночних кораблів. Комп’ютер довільно розміщує ці одиночні кораблі у масиві по один у клітинці (якщо у клітинці 0, то клітинка пуста, якщо 1 – то це означає, що там є корабель. Користувач вводить номер клітинки, куди стріляє. Гра продовжується до тих пір, поки не будуть потоплені усі кораблі.
+<br>
+    <script>
+        const cellNum = parseInt(prompt(`Введіть кількість клітинок поля`))
+        const shipNum = parseInt(prompt(`Введіть кількість кораблів`))
+        let playField = []
+
+        function generatePlayField(cellNum) {
+            for(let i=0; i<cellNum; i++){
+                playField.push(0)
+            }
+        }
+
+        generatePlayField(cellNum)
+
+        function locationOfShips(cellNum, shipNum){
+            let shipCounter =0
+            let freePlace = []
+            for(let i=0; i<shipNum; i++){
+            let placingShip
+            do{
+                placingShip = Math.floor(Math.random() * cellNum) 
+            }
+            while(freePlace.includes(placingShip))
+            freePlace.push(placingShip)
+            playField[placingShip] = 1
+       
+        }
+        }
+
+        locationOfShips(cellNum, shipNum)
+
+        let hitCounter=0
+        let shipRemainder
+            do {
+                let userShot = parseInt(prompt(`Куди стрілять? (від 0 до ${cellNum-1} )`))
+                if(playField[userShot]===1){
+                    hitCounter++
+                    playField[userShot]=0   
+                    shipRemainder = shipNum-hitCounter
+                    alert(`Ти попав, залишилось ${shipRemainder} кораблів`) 
+                }
+                else alert(`Ти не попав, залишилось ${shipRemainder} кораблів`)
+            } while (hitCounter<shipNum);
+
+    </script>
+</body>
+</html>

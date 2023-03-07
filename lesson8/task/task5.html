@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 5</title>
+</head>
+<body>
+    Задача 5. Дано послідовність оцінок учня. Підрахувати кількість: <br>
+1)двійок<br>
+2)кількість хороших оцінок (добре, відмінно);<br>
+3)кількість оцінок, які нижче середнього.<br>
+<br>
+    <script>
+        const N = parseInt(prompt(`Введіть кількість оцінок`))
+        let totalScore = []
+        let scoreSum = 0
+        for(let i=1; i<=N; i++){
+            let score = parseInt(prompt(`Введіть оцінку за ${i} предмет (від 1 до 12)`))
+            totalScore.push(score)
+            scoreSum+= score
+        }
+////////////////////////////////////Кількість двійок
+        function getNumTwo(totalScore) {
+            numTwoCounter=0
+            for (let i=0; i<totalScore.length; i++) {
+                if(totalScore[i]===2)
+                numTwoCounter++
+            }
+            return numTwoCounter
+        }
+
+        document.write(`В учня ${getNumTwo(totalScore)} двійок <br>`)
+
+///////////////////////Rількість хороших оцінок (добре, відмінно)
+
+function getNumGreatScore(totalScore) {
+              let numGreatScoreCounter=0
+            for (let i=0; i<totalScore.length; i++) {
+                if(totalScore[i]>6)
+                numGreatScoreCounter++
+            }
+            return numGreatScoreCounter
+        }
+
+        document.write(`В учня ${getNumGreatScore(totalScore)} хороших оцінок <br>`)
+
+////////////////Кількість оцінок, які нижче середнього.
+
+function getNumScoreLessThanAverage(totalScore) {
+              let numScoreLessThanAverageCounter=0
+              const averageScore = scoreSum / totalScore.length
+            for (let i=0; i<totalScore.length; i++) {
+                if(totalScore[i]<averageScore)
+                numScoreLessThanAverageCounter++
+            }
+            return numScoreLessThanAverageCounter
+        }
+
+        document.write(`В учня ${getNumScoreLessThanAverage(totalScore)} оцінок які нижче середнього <br>`)
+    </script>
+</body>
+</html>

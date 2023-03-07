@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2</title>
+</head>
+<body>
+    Задача 2. Дано масив, який зберігає кількість відвідувачів магазину протягом тижня. Вивести на екран:<br>
+    номери днів, протягом яких кількість відвідувачів була меншою за 20;<br>
+    номери днів, коли кількість відвідувачів була мінімальною;<br>
+    номери днів, коли кількість відвідувачів була максимальоню;<br>
+    загальну кількість клієнтів у робочі дні та окремо загальну кількість днів на вихідних.
+    <br>
+    <script>
+      let totalClients = []
+      let daysWhenClientsLess20 = [] 
+      
+/////////////////// Вводимо кількість клієнтів
+      for(let i=1; i<=7; i++){
+        const clientsPerDay = parseInt(prompt(`Введіть кількість клієнтів за ${i} день `))
+        totalClients.push(clientsPerDay)
+      }
+
+  ///////////////////Визначаємо номери днів, протягом яких кількість відвідувачів була меншою за 20;
+      
+  function getDaysWhenClientsLess20(totalClients){
+        for(let i=0; i<7;i++){
+            if(totalClients[i]<20)
+            daysWhenClientsLess20.push(i+1)
+        }
+        document.write(`Дні коли кількість відвідувачів була меншою за 20: ${daysWhenClientsLess20}<br>`)
+      }
+///////////////////Визначаємо номер дня, коли кількість відвідувачів була мінімальною;
+        
+        let minClientsDay = 0
+        let minClientsNum = Infinity
+      function dayWhenClientsNumIsMin(totalClients, minClientsDay, minClientsNum) {
+        for (let i=0; i<7; i++) {
+            if(totalClients[i]<minClientsNum){
+                minClientsNum = totalClients[i]
+                minClientsDay = i+1
+            }
+        }
+        document.write(`День з мінімальною кількістю клієнтів:${minClientsDay}, а саме: ${minClientsNum} клієнтів <br>`)
+      }
+
+///////////////////Визначаємо номер дня, коли кількість відвідувачів була максимальною;
+        
+      let maxClientsDay = 0
+      let maxClientsNum = -Infinity
+      function dayWhenClientsNumIsMax(totalClients, maxClientsDay, maxClientsNum) {
+        for (let i=0; i<7; i++) {
+            if(totalClients[i]>maxClientsNum){
+                maxClientsNum = totalClients[i]
+                maxClientsDay = i+1
+            }
+        }
+        document.write(`День з максимальною кількістю клієнтів:${maxClientsDay}, а саме: ${maxClientsNum} клієнтів <br>`)
+      }
+///////////////////////Загальна кількість клієнтів у робочі дні
+     
+      function totalClientsNumInWorkDays(totalClients) {
+        let sumClientsPerWorkDays = 0
+       for(let i=0; i<5; i++){
+        sumClientsPerWorkDays+= totalClients[i]
+       }
+       document.write(`Загальна кількість клієнтів протягом робочих днів: ${sumClientsPerWorkDays} <br>`)
+      }
+      
+      ///////////////////////Загальна кількість клієнтів у вихідні дні
+     
+      function totalClientsNumInHolidays(totalClients) {
+        let sumClientsPerHolidays = 0
+       for(let i=5; i<7; i++){
+        sumClientsPerHolidays+= totalClients[i]
+       }
+       document.write(`Загальна кількість клієнтів протягом вихідних днів: ${sumClientsPerHolidays} `)
+      }
+      
+      getDaysWhenClientsLess20(totalClients)
+      dayWhenClientsNumIsMin(totalClients, minClientsDay, minClientsNum)
+      dayWhenClientsNumIsMax(totalClients, maxClientsDay, maxClientsNum) 
+      totalClientsNumInWorkDays(totalClients) 
+      totalClientsNumInHolidays(totalClients)
+
+
+    </script>
+</body>
+</html>

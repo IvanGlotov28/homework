@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1</title>
+</head>
+<body>
+    Задача 1. Дано масив, який містить оцінки з К предметів. Знайти середній бал і з’ясувати до якої категорії він відноситься (відмінник, двійочник (має хоча би одну двійку), хорошист (оцінки добре і відмінно), трійочник(є хоча би одна трійка)).
+    <br>
+    <script>
+
+    const K = parseInt(prompt('Кількість предметів'))   
+    totalScore = []  
+    let scoreSum = 0
+////////////////////////////Вводимо оцінки
+    for(let i = 1; i<=K; i++){ 
+     let score = parseInt(prompt(`Введіть оцінку за ${i} предмет (від 1 до 5)`))
+     totalScore.push(score)
+     scoreSum +=score
+    }
+    document.write(`Всі оцінки: ${totalScore} <br>`)
+////////////////////////////Визначаємо середній бал
+    function getAverageScore(K, scoreSum) {
+        return scoreSum / K
+    }
+    const averageScore = getAverageScore(K, scoreSum)
+    document.write(`Середній бал: ${averageScore} <br>`)
+
+
+
+
+////////////////////////Визначаємо статус студента
+    function getStudentStatus(totalScore) {
+    let minScore = 5
+    let studentStatus = ``
+    for (let i = 0; i<totalScore.length; i++) {
+        if (totalScore[i]<=2) {minScore = 2; break}
+        else if (totalScore[i]===3)minScore = 3
+        else if (totalScore[i]===4)minScore = 4
+        else minScore = 5
+    }
+    if (minScore<=2)studentStatus=`Двійочник`
+    else if (minScore === 3) studentStatus=`Трійочник`
+    else if (minScore === 4) studentStatus=`Хорошист`
+    else if (minScore === 5) studentStatus=`Відмінник`
+
+    document.write(`Ви ${studentStatus}`)
+}
+
+getStudentStatus(totalScore) 
+
+
+
+    </script>
+</body>
+</html>
